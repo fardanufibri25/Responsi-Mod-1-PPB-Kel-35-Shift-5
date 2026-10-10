@@ -1,6 +1,7 @@
 const express = require('express');
 
-const { SUPABASE_URL, SUPABASE_KEY } = process.env;
+const SUPABASE_URL = (process.env.SUPABASE_URL || '').trim();
+const SUPABASE_KEY = (process.env.SUPABASE_KEY || '').trim();
 if (!SUPABASE_URL || !SUPABASE_KEY) {
   console.error('SUPABASE_URL dan SUPABASE_KEY wajib diisi (lihat .env.example)');
   process.exit(1);

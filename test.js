@@ -95,4 +95,15 @@ test('error dari Supabase diteruskan sebagai 500 JSON', async () => {
   mode = 'ok';
 });
 
+test('env dengan spasi/newline di ujung tetap dibersihkan', async () => {
+  process.env.SUPABASE_URL = '  https://demo.supabase.co\r\n';
+  process.env.SUPABASE_KEY = '  key-abc\r\n';
+  delete require.cache[require.resolve('./server')];
+  const appBersih = require('./server');
+  const srv = appBersih.listen(0);
+  await realFetch(`http://127.0.0.1:${srv.address().port}/loans`);
+  assert.equal(last().url, 'https://demo.supabase.co/rest/v1/loans?select=*&order=loan_date.desc');
+  srv.close();
+});
+
 test.after(() => server.close());

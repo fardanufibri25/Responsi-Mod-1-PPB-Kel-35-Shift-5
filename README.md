@@ -55,7 +55,7 @@ Prasyarat: Node.js >= 20.
 
 ## Endpoint
 
-Base URL lokal: `http://localhost:3000` &nbsp;|&nbsp; Deployment: `https://<nama-proyek>.vercel.app`
+Base URL lokal: `http://localhost:3000` &nbsp;|&nbsp; Deployment: `https://responsi-mod-1-ppb-kel-35-shift-5.vercel.app`
 
 | Method   | Endpoint      | Keterangan                        |
 | -------- | ------------- | --------------------------------- |
@@ -159,7 +159,7 @@ API ini dirancang sebagai satu fungsi serverless: `server.js` men-*export* Expre
 2. Di [vercel.com](https://vercel.com) → **Add New → Project** → import repo, lalu:
    - Framework Preset: **Other**
    - Environment Variables: tambahkan `SUPABASE_URL` dan `SUPABASE_KEY`
-3. **Deploy**. Semua endpoint langsung tersedia di domain Vercel tanpa prefix `/api`, misal `https://<nama-proyek>.vercel.app/loans`.
+3. **Deploy**. Semua endpoint langsung tersedia di domain Vercel tanpa prefix `/api`, misal `https://responsi-mod-1-ppb-kel-35-shift-5.vercel.app/loans`.
 
 Alternatif via CLI:
 
@@ -170,7 +170,7 @@ vercel --prod
 # set env var: vercel env add SUPABASE_URL  dan  vercel env add SUPABASE_KEY
 ```
 
-**Base URL deployment: `https://<nama-proyek>.vercel.app`** (isi setelah deploy).
+**Base URL deployment: `https://responsi-mod-1-ppb-kel-35-shift-5.vercel.app`**
 
 > Catatan keamanan: `SUPABASE_KEY` memakai *service_role key* sehingga hanya boleh disimpan di server/env Vercel, tidak pernah diekspos ke klien.
 
@@ -182,3 +182,4 @@ test.js         # tes otomatis (node:test, tanpa dependency)
 schema.sql      # DDL tabel loans
 .env.example    # contoh environment variable
 ```
+
