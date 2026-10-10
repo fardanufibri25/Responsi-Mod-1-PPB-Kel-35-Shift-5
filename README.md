@@ -32,7 +32,7 @@ Prasyarat: Node.js >= 20.
 1. Buat project Supabase, lalu jalankan isi file [`schema.sql`](schema.sql) di **SQL Editor** Supabase.
 2. Salin kredensial Supabase (Project Settings → API):
    - `SUPABASE_URL` → Project URL
-   - `SUPABASE_KEY` → **service_role key** (khusus server, jangan dipakai di frontend)
+   - `SUPABASE_KEY` → **secret key** (`sb_secret_...`) dari **Settings → API Keys** (khusus server, jangan dipakai di frontend)
 3. Siapkan environment:
 
    ```bash

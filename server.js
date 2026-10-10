@@ -16,7 +16,7 @@ async function supa(path, { method = 'GET', body } = {}) {
     method,
     headers: {
       apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
+      ...(SUPABASE_KEY.startsWith('eyJ') ? { Authorization: `Bearer ${SUPABASE_KEY}` } : {}),
       'Content-Type': 'application/json',
       Prefer: 'return=representation',
     },
